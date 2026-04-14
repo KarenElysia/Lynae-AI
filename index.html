@@ -2,21 +2,24 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>My Chat</title>
+  <title>Embedded Chat</title>
 </head>
 <body>
 
-<h1>Welcome</h1>
-<p>ここにチャットが表示されます</p>
+<h1>Embedded Chat</h1>
+
+<div id="quickchat-embedded" style="height:600px; overflow:hidden;"></div>
 
 <script>
-  (function(e,a,d,i,c,t=a.createElement(d)){
-    e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},
-    t.src=i,t.async=1,
-    a.body.insertAdjacentElement("beforeend",t)
-  })(window,document,"script","https://bubble.quickchat.ai/chat.js","_quickchat");
+(function(e,a,d,i,c,t=a.createElement(d)){
+  e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},
+  t.src=i,
+  t.async=1,
+  a.body.appendChild(t)
+})(window,document,"script","https://bubble.quickchat.ai/chat.js","_quickchat");
 
-  _quickchat("init", "502etg37xf");
+_quickchat("containerId", "quickchat-embedded");
+_quickchat("init", "502etg37xf");
 </script>
 
 </body>
